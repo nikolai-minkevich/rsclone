@@ -144,12 +144,9 @@ class LoadTrackPage {
   }
   handleBodyKeypress(e) {
     if (e.stopPropagation) e.stopPropagation();
-    let shift,
+    let
       alt,
       ctrl = null;
-    if (e.shiftKey) {
-      shift = true;
-    }
     if (e.ctrlKey) {
       ctrl = true;
     }
@@ -160,11 +157,10 @@ class LoadTrackPage {
       this.loadTrack(e);
       ctrl = false;
     }
-    if ((e.shiftKey && alt) || (e.altKey && shift)) {
+    if (ctrl && e.code == "KeyE") {
       this.chooseLanguageComponent.hotkeyChangeLanguage();
       this.refreshLayout();
-      shift = false;
-      alt = false;
+      ctrl = false;
     }
   }
   addEventListeners() {

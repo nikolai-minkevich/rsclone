@@ -98,13 +98,10 @@ class ShowTrackPage {
     if (result.isPrivate) {
       document.querySelector(".icon_private0").style.visibility = "visible";
     }
-    document.querySelectorAll(".stat_distance").forEach((item)=>{
-      item.innerHTML= (result.distance / 1000).toFixed(1).toString() + ` ${this.wordsChooseArr.km}`;
-    });
-    document.querySelectorAll(".stat_points").forEach((item)=>{
-      item.innerHTML= `${this.wordsChooseArr.points} ${result.points}`;
-    });
 
+    // Show track on map
+
+    //this.worldMap.showGpx(hashString);
     this.trackShowRes = await this.worldMap.showGpx(this.hashString);
     if (this.trackShowRes) {
       setTimeout(() => {
@@ -126,16 +123,12 @@ class ShowTrackPage {
     this.generateLayout();
   }
   handleBodyKeypress(e) {
-    let shift,
+    let 
       alt,
       ctrl = null;
-      if (e.shiftKey) {
-        shift = true;
-      }
       if (e.ctrlKey) {
         ctrl = true;
       }
-  
       if (e.altKey) {
         alt = true;
       }
@@ -149,11 +142,10 @@ class ShowTrackPage {
         ctrl = false;
     }
 
-    if ((e.shiftKey && alt) || (e.altKey && shift)) {
+    if (ctrl && e.code == "KeyE") {
       this.chooseLanguageComponent.hotkeyChangeLanguage();
       this.refreshLayout();
-      shift = false;
-      alt = false;
+      ctrl = false;
     }
   }
   addEventListeners() {

@@ -6,9 +6,7 @@ import Footer from "./Footer";
 import Auth from "./utils/auth.utils";
 
 class RegistrationPage {
-  constructor() {
-   
-  }
+  constructor() {}
   getWordsData() {
     this.chooseLanguageComponent = new ChooseLanguage();
     this.wordsArr = this.chooseLanguageComponent.generateWordsData();
@@ -22,8 +20,8 @@ class RegistrationPage {
   async generateLayout() {
     const auth = await new Auth().checkAuth();
     if (auth) {
-      window.location = '/mytracks';
-    } 
+      window.location = "/mytracks";
+    }
     const footer = new Footer();
     this.getWordsData();
     this.button__prime = create(
@@ -78,7 +76,10 @@ class RegistrationPage {
         `${this.wordsChooseArr.registration}`
       ),
       create("div", "registration_form_container", [
-        create("label", null, `${this.wordsChooseArr.yourLogin}`, null, ["for", "loginField"]),
+        create("label", null, `${this.wordsChooseArr.yourLogin}`, null, [
+          "for",
+          "loginField",
+        ]),
         create(
           "input",
           null,
@@ -101,7 +102,10 @@ class RegistrationPage {
         ),
         this.duplicate_email_description,
         this.email_description,
-        create("label", null, `${this.wordsChooseArr.password}`, null, ["for", "password"]),
+        create("label", null, `${this.wordsChooseArr.password}`, null, [
+          "for",
+          "password",
+        ]),
         this.password,
         this.password_description,
         create(
@@ -120,7 +124,10 @@ class RegistrationPage {
       ]),
       this.chooseLanguage_container,
     ]);
-    const wrapper = create("div", "wrapper registration_wrapper", [this.registration_form,       footer.generateLayout()]);
+    const wrapper = create("div", "wrapper registration_wrapper", [
+      this.registration_form,
+      footer.generateLayout(),
+    ]);
     document.body.prepend(wrapper);
     this.addEventListeners();
   }
@@ -152,11 +159,11 @@ class RegistrationPage {
   }
   refreshLayout() {
     document.body.innerHTML = "";
-    document.body.removeEventListener('keydown', this.onPress);
+    document.body.removeEventListener("keydown", this.onPress);
     this.chooseLanguage = localStorage.getItem("gpxiesChosen_language");
     this.generateLayout();
   }
-  async handleEventRegistration(e){
+  async handleEventRegistration(e) {
     e.preventDefault();
     this.clearLoginErrors();
     this.validatePassword();
@@ -177,12 +184,8 @@ class RegistrationPage {
   }
   handleBodyKeypress(e) {
     if (e.stopPropagation) e.stopPropagation();
-    let shift,
-      alt,
+    let alt,
       ctrl = null;
-    if (e.shiftKey) {
-      shift = true;
-    }
     if (e.ctrlKey) {
       ctrl = true;
     }
@@ -190,28 +193,27 @@ class RegistrationPage {
     if (e.altKey) {
       alt = true;
     }
-
-    if (ctrl&&e.code == 'Enter') {
+    if (ctrl && e.code == "Enter") {
       this.handleEventRegistration(e);
       ctrl = false;
     }
-
-
-    if ((e.shiftKey && alt) || (e.altKey && shift)) {
+    if (ctrl && e.code == "KeyE") {
       this.chooseLanguageComponent.hotkeyChangeLanguage();
       this.refreshLayout();
-      shift = false;
-      alt = false;
+      ctrl = false;
     }
   }
   addEventListeners() {
     this.onPress = this.handleBodyKeypress.bind(this);
-    document.body.addEventListener('keydown', this.onPress);
-    this.button__prime.addEventListener("click", (e) => {this.handleEventRegistration(e)
+    document.body.addEventListener("keydown", this.onPress);
+    this.button__prime.addEventListener("click", (e) => {
+      this.handleEventRegistration(e);
     });
-    document.addEventListener('keydown',  (e)=>{ if(e.code == "Enter"){
-      this.handleEventRegistration(e)
-    }});
+    document.addEventListener("keydown", (e) => {
+      if (e.code == "Enter") {
+        this.handleEventRegistration(e);
+      }
+    });
     this.registration_form_loginLink.addEventListener("click", () => {
       this.redirectToLoginPage();
     });

@@ -101,6 +101,14 @@
   padding-right: 5px;
   max-width: 50%;
 }
+.trackDescription_menu_item__disabled:hover{
+  background-color: inherit;
+  cursor: auto;
+  color: rgba(128, 128, 128);
+}
+.trackDescription_menu_item__disabled:active{
+  background-color: inherit;
+}
 
 /*
 .trackDescription_data_container{
