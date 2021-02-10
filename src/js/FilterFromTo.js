@@ -1,9 +1,11 @@
 import create from "./utils/create.utils";
 import icon_triangle from "../../assets/img/icon_triangle.png";
 class FilterFromTo {
- constructor(containerClass){
-    this.containerClass = containerClass
-  }
+ /* constructor(callbackFunctionFromHight,callbackFunctionFromLow,param){
+    this.callbackFunctionFromHight = callbackFunctionFromHight
+    this.callbackFunctionFromLow = callbackFunctionFromLow
+    this.param = param
+  }*/
   generateLayout() {
     this.filter_fromHight = create(
       "img",
@@ -19,7 +21,7 @@ class FilterFromTo {
       ["src",
       icon_triangle,
     ]);
-    const filter_icons_container = create("div", `filter_icons_container ${this.containerClass}`, [
+    const filter_icons_container = create("div", "filter_icons_container", [
       this.filter_fromHight,
       this.filter_fromLow,
     ])

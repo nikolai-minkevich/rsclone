@@ -1,10 +1,10 @@
 .headerMenu_container{
     z-index: 10;
     position: relative;
-    top: 112px;
+    top: 94px;
     width: 180px;
     background-color: white;
-    transform: translate(0px,-175px);
+    transform: translate(0px,-140px);
     transition: transform 1s;
 }
 .headerMenu_item{

@@ -1,11 +1,7 @@
 import "../css/main.css";
 import create from "./utils/create.utils";
 import ChooseLanguage from "./ChooseLanguage";
-class ButtonsBlock {
-  constructor(buttonsArr,containerClass){
-    this.containerClass = containerClass
-    this.buttonsArr = buttonsArr
-  }
+class TrackListPageButtonsBlock {
   getWordsData(){
     const chooseLanguageComponent = new ChooseLanguage();
     this.wordsArr = chooseLanguageComponent.generateWordsData();
@@ -14,11 +10,10 @@ class ButtonsBlock {
   }
   generateLayout() {
     this.getWordsData()
-    this.buttonsBlock_container = create('div',this.containerClass)
-    this.buttonsArr.map((item)=>{
-      let buttonNode = create('div', item[0],item[1])
-      this.buttonsBlock_container.append(buttonNode)
-    })
+    this.buttonsBlock_container = create('div',"buttonsBlock_container",[
+      create('div', "track_download_button",`${this.wordsChooseArr.download}`),
+      create('div', "track_delete_button", `${this.wordsChooseArr.delete}`),
+    ])
     return  this.buttonsBlock_container
   }
   showButtonContainer() {
@@ -32,4 +27,4 @@ class ButtonsBlock {
     );
   }
 }
-export default ButtonsBlock
+export default TrackListPageButtonsBlock
