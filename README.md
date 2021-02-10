@@ -1,4 +1,5 @@
-Gpxies.ru: сервис просмотра и хранения GPS-треков
+# rsclone
+Gpxies: сервис просмотра и хранения GPS-треков
 
 Для начала работы зарегистрируйтесь на сайте https://gpxies.ru и попробуйте загрузить gpx-файл. Вы можете использовать свои файлы, либо взять примеры файлов отсюда https://github.com/nikolai-minkevich/rsclone/tree/develop/gpx
 
