@@ -1,0 +1,113 @@
+.header_container {
+  /*padding: 0 10px;*/
+  z-index: 40;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header {
+  height: 50px;
+  width: 100%;
+  background-color: white;
+
+  /* position: -webkit-sticky;
+  position: sticky;
+  top: 0; /* required */
+}
+.logout_button {
+  height: 35px;
+  padding: 5px 20px;
+  background-color: #54939b;
+  color: white;
+  border-radius: 7px;
+  border: none;
+  font-size: 16px;
+}
+.logout_button:hover {
+  color: white;
+}
+.logout_button:active {
+  background-color: #40757c;
+  border: none;
+}
+.logo {
+  color: #40757c;
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.header_userName {
+  z-index: 20;
+  background-color: white;
+  position: relative;
+  right: -180px;
+  height: 100%;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  color: rgb(110, 110, 110);
+  padding-right: 5px;
+
+}
+
+.header_userName span{
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/*.header_userName:hover{
+  color: black;
+  background-color: #d5f0f3;
+}*/
+.header_userName:hover {
+  cursor: pointer;
+}
+.icon_triangle {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+  transition: filter 0.1s;
+}
+.header_userName:hover .icon_triangle {
+  filter: invert(0);
+  transition: filter 0.1s;
+}
+.header_userName:hover {
+  color: black;
+}
+@media (max-width: 1000px) and (min-width: 650px)  {
+  .logo{
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .logo {
+    width: 0px;
+    margin: 0;
+    margin-left: 10px;
+  }
+  .header_userName {
+    width: 140px;
+    right: -140px;
+  }
+}
+
+/*
+@media (max-width: 1000px) and (min-width: 650px)  {
+  .container {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 650px) {
+.container {
+  width: 100vw;
+}
+}*/

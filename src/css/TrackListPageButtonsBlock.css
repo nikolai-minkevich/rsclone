@@ -1,0 +1,83 @@
+.buttonsBlock_container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100px;
+    padding: 10px;
+    width: 180px;
+    background-color: rgb(230, 206, 174);
+    position: sticky;
+    top: 48px;
+    margin-left: auto;
+    right: 0;
+    z-index: 2;
+    transform: translate(0,-100px);
+    transition: transform 1s;
+    border-radius: 7px 0 0 7px;
+}
+.buttonsBlock_container_unhidden{
+    /*top: 0;*/
+   transform: translate(0,0);
+    transition: transform 0.3s;
+    /*visibility: visible;*/
+}
+.track_download_button{
+    background-color:#54939b;
+}
+.track_delete_button{
+    background-color: orangered;
+}
+.track_download_button, .track_delete_button{
+    padding: 5px 20px;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+}
+
+.track_download_button:hover, .track_delete_button:hover {
+    color: white;
+  }
+  .track_delete_button:active {
+    background-color: rgb(238, 63, 0);
+    border: none;
+  }
+  .track_download_button:active {
+    background-color:#47767c;
+    border: none;
+  }
+
+.buttonsBlock_container_unhidden{
+    /*top: 0;*/
+   transform: translate(0,0);
+    transition: transform 0.3s;
+    /*visibility: visible;*/
+}
+
+@media (max-width: 1000px) and (min-width: 650px)  {
+    .buttonsBlock_container{
+        height: 90px;
+        padding: 7px;
+        width: 110px;
+    }
+    .track_download_button, .track_delete_button{
+        padding: 5px;
+    }
+  }
+ 
+  @media (max-width: 650px) {
+    .buttonsBlock_container{
+        top: 68px;
+    }
+    .buttonsBlock_container{
+        height: 90px;
+        padding: 7px;
+        width: 85px;
+    }
+    .track_download_button, .track_delete_button{
+        padding: 5px;
+    }
+  }
+
+

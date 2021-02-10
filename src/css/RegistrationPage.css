@@ -1,0 +1,63 @@
+.registration_form{
+    width: 300px;
+    min-height: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: space-between;
+    border-radius: 7px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.2); /* Параметры тени */
+}
+.registration_form .button__primary{
+    text-align: center;
+    width: 65%;
+}
+.registration_form_buttoncontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registration_form_title{
+    border-radius: 7px 7px 0 0 ;
+    height: 50px;
+    background-color:#54939b;
+    text-shadow: 0.05em 0.05em 0.1em rgb(84, 147, 155),-0.05em -0.05em 0.1em rgb(84, 147, 155, 0.3);
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.registration_form_container{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    justify-content: space-between;
+}
+
+.registration_form_loginLink{
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: rgba(128, 128, 128);
+}
+.registration_form_loginLink:hover{
+    margin-bottom: 10px;
+    color: black;
+}
+.password_description__hidden, .confirm_password_description__hidden, .duplicate_email_description__hidden{
+    visibility: hidden;
+    height: 0px;
+}
+.password_description, .login_description, .email_description, .confirm_password_description, .duplicate_email_description{
+    font-size: 10px;
+    line-height: 12px;
+    color: rgba(128, 128, 128);
+    display: flex;
+    flex-direction: column;
+}
+
+.registration_wrapper footer {
+    position: absolute;
+    bottom: 0;
+}
